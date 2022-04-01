@@ -87,6 +87,7 @@ html, body {
 
 .nav .navlink a,
 .mobile-navlink a {
+  color: #171446!important;
   text-decoration: none;
 }
 
@@ -139,6 +140,7 @@ html, body {
 
 .desktop.content.home {
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .content.about {
@@ -160,20 +162,24 @@ html, body {
 }
 
 .desktop .intro-image {
-  flex: 1;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  background-image: linear-gradient(to right, rgba(23,20,70) 88%, rgba(255,255,255) 12%);
+  background-image: url('../assets/images/home-background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .desktop .intro-content {
-  flex: 2; 
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  padding-right: 80px;
 }
 
 .desktop .intro-content-header {
@@ -192,6 +198,7 @@ html, body {
 }
 
 .intro-content-header .secondary {
+  width: 400px;
   font-family: 'Heebo', sans-serif;
   background-color: #FFD365;
   text-align: center;
@@ -207,12 +214,15 @@ html, body {
 
 .desktop .intro-content-body {
   margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .desktop .intro-tags {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 400px;
   color: #6AA0F0;
   font-size: 16px;
 }
@@ -250,8 +260,7 @@ html, body {
   padding: 20px 30px 15px 30px;
 }
 
-.desktop .intro-description a, .intro-description a:visited {
-  text-decoration: none;
+.intro-description span.company {
   color: #AC5C00;
   font-weight: 600;
 }
@@ -286,6 +295,16 @@ html, body {
   margin-right: 40px;
 }
 
+.intro-content-footer a:hover {
+  background-color: #171446;
+  color: #fff;
+  border-color: #171446;
+}
+
+.intro-content-footer a:hover img {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(204%) contrast(101%);
+}
+
 .desktop.footer {
   z-index: 2;
   position: absolute;
@@ -305,12 +324,15 @@ html, body {
   background-image: url('../assets/images/mobile-background.png');
   background-repeat: no-repeat;
   background-size: 100% 65%;
+  box-sizing: border-box;
 }
 
 .mobile .intro-content-header {
+  width: 480px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 .mobile .intro-content-header .primary {
@@ -334,6 +356,10 @@ html, body {
   flex: 1;
   display: flex;
   margin-top: 10px;
+}
+
+.mobile .intro-image {
+  margin-left: -7px;
 }
 
 .mobile .intro-image img {
@@ -371,9 +397,11 @@ html, body {
 }
 
 .mobile .intro-description {
+  width: 480px;
   margin: 50px 30px;
   text-align: center;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
 .mobile .intro-description span {
@@ -381,13 +409,19 @@ html, body {
   font-weight: 600;
 }
 
+.mobile .intro-description span.company {
+  color: #AC5C00;
+}
+
 .mobile .intro-content-footer {
+  width: 480px;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .mobile .intro-content-footer a {
-  width: 180px;
+  width: 100%;
 }
 
 .mobile .intro-content-footer a:first-child  {
@@ -744,6 +778,68 @@ margin-bottom: 10px;
   display: none;
 }
 
+.modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  overflow-y: auto;
+  top: 0px;
+  left: 0px;
+  box-sizing: border-box;
+  z-index: 4;
+}
+.modal::-webkit-scrollbar {
+  display: none;
+}
+.modal-container {
+  margin: 50px auto 80px auto;
+  width: 853px;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 5;
+  padding-left: 20px;
+}
+.modal-content {
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  padding: 2px;
+  margin-bottom: 50px;
+}
+.modal-content img {
+  display: block;
+  width: 100%;
+}
+.modal .modal-close {
+  position: absolute;
+  cursor: pointer;
+  top: 0px;
+  right: 0px;
+  transform: translate(60%,-50%);
+}
+.modal .modal-download-cv {
+  position: absolute;
+  top: 100%;
+  cursor: pointer;
+  background-color: #787878;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 10px;
+  border: 2px solid #fff;
+  border-top: none;
+  right: -4px;
+  text-decoration: none;
+}
+.modal .modal-download-cv img {
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+}
+
 @media only screen and (max-width: 1280px) {
   .about-contact {
     width: 100%;
@@ -983,6 +1079,20 @@ margin-bottom: 10px;
     margin-top: 10px;
     color: #6AA0F0;
     font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mobile .intro-content-header {
+    width: 100%;
+  }
+  
+  .mobile .intro-description {
+    width: 90%;
+  }
+
+  .mobile .intro-content-footer {
+    width: 90%;
   }
 }
 

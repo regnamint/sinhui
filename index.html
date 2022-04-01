@@ -16,7 +16,6 @@
         <div class="navlink">
           <a href="#" class="active">Home</a>
           <a href="#">Work</a>
-          <a href="./about.html">About Me</a>
         </div>
       </div>
       <div class="nav nav-mobile">
@@ -31,7 +30,6 @@
         <a href="#" id="menu-close"><img src="assets/images/icon-close.png" alt="close"></a>
         <a href="#">Home</a>
         <a href="#">Work</a>
-        <a href="./about.html">About Me</a>
         <a href="#">Resume</a>
       </div>
       <div class="content desktop home">
@@ -52,12 +50,12 @@
             </div>
             <div class="intro-description">
               I have 5 years working experience in design related field. <br>
-              Currently, I am an Inhouse Creative Designer at <a href="https://www.storehub.com/my/">StoreHub</a>.
+              Currently, I am an Inhouse Creative Designer at <span class="company">StoreHub</span>.
             </div>
           </div>
           <div class="intro-content-footer">
             <a href="work.html"><img src="assets/images/icon-work.svg" alt=""><span>Work</span></a>
-            <a href="#"><img src="assets/images/icon-resume.svg" alt=""><span>Resume</span></a>
+            <a class="resume" href="javascript:;"><img src="assets/images/icon-resume.svg" alt=""><span>Resume</span></a>
           </div>
         </div>
       </div>
@@ -79,16 +77,26 @@
             </div>
           </div>
           <div class="intro-description">
-            I have <span>5 years</span> working experience in design related field. <br>
-            Currently, I am an Inhouse Creative Designer at <a href="https://www.storehub.com/my/">StoreHub</a>.
+            I have <span>5 years</span> working experience in design related field. Currently, I am an Inhouse Creative Designer at <span class="company">StoreHub</span>.
           </div>
           <div class="intro-content-footer">
             <a href="work.html"><img src="assets/images/icon-work.svg" alt=""><span>Work</span></a>
-            <a href="#"><img src="assets/images/icon-resume.svg" alt=""><span>Resume</span></a>
+            <a class="resume" href="javascript:;"><img src="assets/images/icon-resume.svg" alt=""><span>Resume</span></a>
           </div>
         </div>
       </div>
     </div>
+    <!-- Selection modal start -->
+  <div id="resume-modal" class="modal">
+    <div class="modal-container">
+      <div class="modal-content">
+        <span class="modal-close"><img src="./assets/images/icon-modal-close.png" alt="Close"></span>
+        <img src="./assets/images/resume-image-ver.jpg" alt="Resume">
+        <a href="./assets/pdf/sinhui.pdf" target="_blank" class="modal-download-cv"><img src="./assets/images/icon-download.png" alt="Download"><span>Download CV</span></a>
+      </div>
+    </div>
+  </div>
+  <!-- Selection modal end -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
